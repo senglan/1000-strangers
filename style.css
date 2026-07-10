@@ -1,0 +1,244 @@
+/* 1,000 Strangers — deliberately dark, single look. */
+
+:root {
+  --bg: #0b0c10;
+  --surface: #14161d;
+  --ink: #f4f5f7;
+  --ink-2: #a9aebc;
+  --ink-3: #767c8c;
+  --line: rgba(255, 255, 255, 0.09);
+  --accent: #ffb224;
+  --accent-ink: #1a1206;
+  --rose: #ff4d6d;
+  --fail: #f87171;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ---------- banner (rehearsal / pre-launch) ---------- */
+.banner {
+  display: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(255, 178, 36, 0.1);
+  border-bottom: 1px solid rgba(255, 178, 36, 0.25);
+}
+body[data-phase="rehearsal"] .banner,
+body[data-phase="pre"] .banner { display: block; }
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 8vw, 4.5rem) 1.25rem 3rem;
+}
+
+/* ---------- headline ---------- */
+.kicker {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.55em auto 0.4em;
+  max-width: 13em;
+  font-size: clamp(2rem, 6.8vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+h1 em { font-style: normal; color: var(--accent); }
+
+.lede {
+  margin: 0 auto;
+  max-width: 36ch;
+  color: var(--ink-2);
+  font-size: 1.02rem;
+}
+.lede strong { color: var(--ink); font-weight: 600; }
+
+/* ---------- the number ---------- */
+.stat { margin-top: 2.6rem; }
+
+.count {
+  font-size: clamp(4.5rem, 20vw, 7.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.count-label {
+  margin-top: 0.35rem;
+  color: var(--ink-2);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.you {
+  margin-top: 0.7rem;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+.you strong { color: var(--accent); font-weight: 700; }
+
+.status {
+  min-height: 1.2em;
+  margin-top: 0.4rem;
+  color: var(--ink-3);
+  font-size: 0.8rem;
+}
+
+/* ---------- meter ---------- */
+.meter {
+  margin: 1.8rem auto 0;
+  max-width: 28rem;
+}
+.meter-track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: var(--accent);
+  transition: width 0.6s ease;
+}
+.meter-nums {
+  margin-top: 0.5rem;
+  color: var(--ink-3);
+  font-size: 0.85rem;
+}
+
+/* ---------- clock ---------- */
+.clock-wrap { margin-top: 2.2rem; }
+.clock {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+}
+.clock-label {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--ink-2);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+body[data-outcome="fail"] .clock { color: var(--fail); }
+
+/* ---------- mosaic ---------- */
+.mosaic { margin: 2.6rem auto 0; max-width: 34rem; }
+.mosaic canvas { display: block; width: 100%; }
+.mosaic-caption {
+  margin: 0.8rem auto 0;
+  color: var(--ink-3);
+  font-size: 0.85rem;
+  max-width: 40ch;
+}
+
+/* ---------- call to action ---------- */
+.cta { margin-top: 2.6rem; }
+
+#share {
+  border: 0;
+  border-radius: 999px;
+  padding: 1rem 2.1rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: inherit;
+  font-size: 1.06rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(255, 178, 36, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+#share:hover { transform: translateY(-1px); box-shadow: 0 10px 34px rgba(255, 178, 36, 0.3); }
+#share:active { transform: translateY(0); }
+#share:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+.cta-sub {
+  margin: 0.85rem auto 0;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  max-width: 34ch;
+}
+.share-done { margin-top: 0.5rem; color: var(--accent); font-size: 0.9rem; }
+
+/* ---------- verdict ---------- */
+.verdict {
+  margin: 3rem auto 0;
+  max-width: 32rem;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+.verdict h2 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+.verdict p { margin: 0.4rem 0; color: var(--ink-2); font-size: 0.98rem; }
+body[data-outcome="success"] .verdict { border-color: rgba(255, 178, 36, 0.45); }
+body[data-outcome="success"] .verdict h2 { color: var(--accent); }
+body[data-outcome="fail"] .verdict { border-color: rgba(248, 113, 113, 0.35); }
+body[data-outcome="fail"] .verdict h2 { color: var(--fail); }
+
+/* ---------- how it works / footer ---------- */
+.how {
+  margin: 3.2rem auto 0;
+  max-width: 36rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  text-align: left;
+}
+.how summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 600;
+  text-align: center;
+}
+.how p { margin: 0.7rem 0; }
+.how a { color: var(--ink); }
+
+footer {
+  margin: 2.5rem auto 2.2rem;
+  color: var(--ink-3);
+  font-size: 0.82rem;
+}
+footer a { color: var(--ink-2); }
+footer .dot { margin: 0 0.4em; }
+
+noscript p {
+  display: block;
+  margin: 2rem auto;
+  max-width: 30rem;
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

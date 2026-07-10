@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1,000 Strangers — a 24-hour experiment</title>
+  <meta name="description" content="Can a webpage find 1,000 strangers in 24 hours — no ads, no Reddit, nothing for sale? It only moves if someone sends it to someone.">
+
+  <link rel="canonical" href="https://REPLACE-ME.github.io/1000-strangers/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Can 1,000 strangers visit this page in one day?">
+  <meta property="og:description" content="No ads. Nothing for sale. Every visitor lights one pixel of a hidden picture. It only moves if someone sends it to someone — and right now, that someone is you.">
+  <meta property="og:url" content="https://REPLACE-ME.github.io/1000-strangers/">
+  <meta property="og:image" content="https://REPLACE-ME.github.io/1000-strangers/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#0b0c10">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230b0c10'/%3E%3Cpath d='M4 3h3v2h2V3h3v2h1v3h-1v2h-2v2h-2v2h-2v-2H4v-2H3V8H2V5h2z' fill='%23ff4d6d'/%3E%3Crect x='10' y='4' width='2' height='2' fill='%23ffb224'/%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-phase="loading">
+  <div class="banner" id="banner" role="status"></div>
+
+  <main>
+    <p class="kicker">A 24-hour experiment</p>
+    <h1>Can <em>1,000 strangers</em> visit this page in one day?</h1>
+    <p class="lede">
+      Nothing is for sale here. No newsletter, no app, no catch.
+      This page exists to answer one question: will people still pass
+      something along, just because it's fun to watch a number go up?
+      <strong>No ads. No Reddit. No Hacker News.</strong> Just forwarding.
+    </p>
+
+    <section class="stat" aria-label="Live visitor count">
+      <div class="count" id="count" aria-live="polite">—</div>
+      <div class="count-label" id="count-label">verified visitors</div>
+      <p class="you" id="you" hidden></p>
+      <p class="status" id="status" role="status"></p>
+    </section>
+
+    <div class="meter" id="meter" role="progressbar" aria-label="Progress toward the goal"
+         aria-valuemin="0" aria-valuemax="1000" aria-valuenow="0">
+      <div class="meter-track"><div class="meter-fill" id="meter-fill"></div></div>
+      <div class="meter-nums" id="meter-nums">0 / 1,000</div>
+    </div>
+
+    <div class="clock-wrap">
+      <span class="clock" id="clock">--:--:--</span>
+      <span class="clock-label" id="clock-label">on the clock</span>
+    </div>
+
+    <section class="mosaic" aria-label="The hidden picture">
+      <canvas id="mosaic" width="800" height="500"></canvas>
+      <p class="mosaic-caption" id="mosaic-caption">
+        Every visitor lights one pixel. At 1,000 the picture completes.
+      </p>
+    </section>
+
+    <section class="cta">
+      <button id="share" type="button">Send this to one person</button>
+      <p class="cta-sub">That's the entire mechanism. The number only moves if you move it.</p>
+      <p class="share-done" id="share-done" hidden></p>
+    </section>
+
+    <section class="verdict" id="verdict" hidden aria-live="polite"></section>
+
+    <details class="how">
+      <summary>How this works</summary>
+      <p>
+        One person built this page and gave it a 24-hour window. The count you
+        see is from <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a>,
+        an open-source, privacy-friendly counter: no cookies, no personal data,
+        nothing to opt out of. Known bots, crawlers, and link-preview robots are
+        filtered out — the number is humans (as best the internet allows).
+      </p>
+      <p>
+        Every verified visitor reveals one cell of the hidden picture, in an
+        order fixed before launch. Your visitor number is stored only in your
+        own browser, so the page remembers which pixel is yours.
+      </p>
+      <p>
+        The rules of the experiment: no paid promotion, no link aggregators,
+        no begging algorithms. The page moves through group chats or it
+        doesn't move at all.
+      </p>
+    </details>
+
+    <noscript><p>This experiment needs JavaScript — running it is how we know you're not a bot.</p></noscript>
+  </main>
+
+  <footer>
+    built in a weekend by one curious person<span id="src-item"><span class="dot">·</span><a id="src-link" href="#" rel="noopener">source</a></span><span id="stats-item"><span class="dot">·</span><a id="stats-link" href="#" rel="noopener">live stats</a></span>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="logic.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
