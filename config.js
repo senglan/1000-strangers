@@ -21,11 +21,10 @@ window.EXPERIMENT_CONFIG = {
   goal: 1000,
 
   // The public URL of this page once deployed, WITHOUT query string.
-  // Example: "https://YOURUSERNAME.github.io/1000-strangers/"
   // Used to build the share link. Falls back to the current address if "".
-  canonicalUrl: "",
+  canonicalUrl: "https://senglan.github.io/1000-strangers/",
 
   // Optional transparency links shown in the footer ("" hides them).
-  repoUrl: "",        // e.g. "https://github.com/YOURUSERNAME/1000-strangers"
+  repoUrl: "https://github.com/senglan/1000-strangers",
   publicStatsUrl: ""  // e.g. "https://strangers1000.goatcounter.com" if you make your dashboard public
 };
