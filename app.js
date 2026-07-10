@@ -332,20 +332,14 @@
     els.verdict.hidden = false;
     if (success) {
       els.verdict.innerHTML =
-        "<h2>" + fmtNum(GOAL) + " strangers showed up.</h2>" +
-        "<p>Final count: <strong>" + fmtNum(state.count) + "</strong> verified humans in " +
-        CFG.windowHours + " hours. No ads, no aggregators — just people sending it to people.</p>" +
-        "<p>The picture is complete. You can stop forwarding it now. (Or don't.)</p>";
+        "<h2>Goal reached.</h2>" +
+        "<p><strong>" + fmtNum(state.count) + "</strong> visitors in " +
+        CFG.windowHours + " hours.</p>";
       celebrate();
     } else {
-      var flavor = state.count >= GOAL * 0.9 ? "Agonizing."
-        : state.count >= GOAL * 0.5 ? "Respectable, honestly."
-        : state.count >= GOAL * 0.1 ? "The internet is a big place. Apparently not big enough."
-        : "Brutal.";
       els.verdict.innerHTML =
         "<h2>Time's up.</h2>" +
-        "<p><strong>" + fmtNum(state.count) + "</strong> of " + fmtNum(GOAL) + ". " + flavor + "</p>" +
-        "<p>The picture stays unfinished. That's the deal with experiments — sometimes the answer is no.</p>";
+        "<p><strong>" + fmtNum(state.count) + "</strong> of " + fmtNum(GOAL) + ".</p>";
     }
     drawMosaic();
   }

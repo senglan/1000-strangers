@@ -25,14 +25,8 @@
   <div class="banner" id="banner" role="status"></div>
 
   <main>
-    <p class="kicker">A 24-hour experiment</p>
     <h1>Can <em>1,000 strangers</em> visit this page in one day?</h1>
-    <p class="lede">
-      Nothing is for sale here. No newsletter, no app, no catch.
-      This page exists to answer one question: will people still pass
-      something along, just because it's fun to watch a number go up?
-      <strong>No ads. No Reddit. No Hacker News.</strong> Just forwarding.
-    </p>
+    <p class="lede">Each visitor counts once. The number only moves when someone passes the link on.</p>
 
     <section class="stat" aria-label="Live visitor count">
       <div class="count" id="count" aria-live="polite">—</div>
@@ -61,7 +55,6 @@
 
     <section class="cta">
       <button id="share" type="button">Send this to one person</button>
-      <p class="cta-sub">That's the entire mechanism. The number only moves if you move it.</p>
       <p class="share-done" id="share-done" hidden></p>
     </section>
 
@@ -70,29 +63,21 @@
     <details class="how">
       <summary>How this works</summary>
       <p>
-        One person built this page and gave it a 24-hour window. The count you
-        see is from <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a>,
-        an open-source, privacy-friendly counter: no cookies, no personal data,
-        nothing to opt out of. Known bots, crawlers, and link-preview robots are
-        filtered out — the number is humans (as best the internet allows).
+        The count comes from <a href="https://www.goatcounter.com" rel="noopener">GoatCounter</a>,
+        an open-source counter: no cookies, no personal data. Bots, crawlers,
+        and link-preview robots are filtered out.
       </p>
       <p>
-        Every verified visitor reveals one cell of the hidden picture, in an
-        order fixed before launch. Your visitor number is stored only in your
-        own browser, so the page remembers which pixel is yours.
-      </p>
-      <p>
-        The rules of the experiment: no paid promotion, no link aggregators,
-        no begging algorithms. The page moves through group chats or it
-        doesn't move at all.
+        Each visitor reveals one cell of the hidden picture, in a fixed order.
+        Your visitor number is stored only in your own browser.
       </p>
     </details>
 
-    <noscript><p>This experiment needs JavaScript — running it is how we know you're not a bot.</p></noscript>
+    <noscript><p>This page needs JavaScript.</p></noscript>
   </main>
 
   <footer>
-    built in a weekend by one curious person<span id="src-item"><span class="dot">·</span><a id="src-link" href="#" rel="noopener">source</a></span><span id="stats-item"><span class="dot">·</span><a id="stats-link" href="#" rel="noopener">live stats</a></span>
+    <span id="src-item"><a id="src-link" href="#" rel="noopener">source</a></span><span id="stats-item"><span class="dot">·</span><a id="stats-link" href="#" rel="noopener">live stats</a></span>
   </footer>
 
   <script src="config.js"></script>
